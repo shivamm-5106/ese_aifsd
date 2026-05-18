@@ -27,7 +27,7 @@ const AddEmployee = () => {
     setError('');
     try {
       await axios.post(
-        'http://localhost:5000/api/employees',
+        '/api/employees',
         {
           ...formData,
           performanceScore: Number(formData.performanceScore),

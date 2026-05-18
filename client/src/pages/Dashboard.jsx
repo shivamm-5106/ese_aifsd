@@ -14,8 +14,8 @@ const Dashboard = () => {
     try {
       setLoading(true);
       const url = searchQuery 
-        ? `http://localhost:5000/api/employees/search?department=${searchQuery}`
-        : 'http://localhost:5000/api/employees';
+        ? `/api/employees/search?department=${searchQuery}`
+        : `/api/employees`;
         
       const { data } = await axios.get(url, {
         headers: { Authorization: `Bearer ${user.token}` }
@@ -40,7 +40,7 @@ const Dashboard = () => {
   const handleDelete = async (id) => {
     if (window.confirm('Are you sure you want to delete this employee?')) {
       try {
-        await axios.delete(`http://localhost:5000/api/employees/${id}`, {
+        await axios.delete(`/api/employees/${id}`, {
           headers: { Authorization: `Bearer ${user.token}` }
         });
         setEmployees(employees.filter(emp => emp._id !== id));

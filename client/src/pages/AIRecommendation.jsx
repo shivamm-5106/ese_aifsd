@@ -15,7 +15,7 @@ const AIRecommendation = () => {
       setLoading(true);
       setError('');
       const { data } = await axios.post(
-        'http://localhost:5000/api/ai/recommend',
+        '/api/ai/recommend',
         {}, // Empty body to get recommendations for all employees
         { headers: { Authorization: `Bearer ${user.token}` } }
       );

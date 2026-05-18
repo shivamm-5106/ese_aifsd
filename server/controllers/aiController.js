@@ -53,7 +53,7 @@ const getRecommendation = async (req, res, next) => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        model: 'openai/gpt-3.5-turbo', // You can change this to google/gemini-2.5-flash or others available on OpenRouter
+        model: 'nvidia/nemotron-3-super-120b-a12b:free', // You can change this to google/gemini-2.5-flash or others available on OpenRouter
         messages: [{ role: 'user', content: prompt }]
       })
     });
